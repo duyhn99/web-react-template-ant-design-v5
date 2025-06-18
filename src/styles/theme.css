@@ -1,0 +1,16 @@
+[data-theme='light'],
+:root {
+  --color-primary: #1890ff;
+  --text-color: #000000;
+  --bg-color: #ffffff;
+  --border-radius: 4px;
+  --color-error: #ff0004;
+}
+
+[data-theme='dark'] {
+  --color-primary: #ff5733;
+  --text-color: #ffffff;
+  --bg-color: #1f1f1f;
+  --border-radius: 8px;
+  --color-error: #ff4d4f;
+}

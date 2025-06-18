@@ -1,0 +1,39 @@
+{
+  "backButton": {
+    "title": "Quay lại trang trước",
+    "content": "Quay lại",
+    "backHome": "Quay lại trang chủ",
+    "backLogin": "Quay lại đăng nhập"
+  },
+  "auth": {
+    "welcome": "Chào mừng đến",
+    "title": "Đăng nhập",
+    "content": "Đăng nhập",
+    "username": "Tài khoản",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "email": "Email",
+    "rememberMe": "Nhớ tài khoản",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "forgotPassword": "Quên mật khẩu",
+    "noAccount": "Chưa có tài khoản",
+    "haveAccount": "Đã có tài khoản",
+    "description-forgotPassword": "Vui lòng nhập địa chỉ email được liên kết với tài khoản của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu"
+  },
+  "placeholder": {
+    "username": "Nhập tài khoản",
+    "password": "Nhập mật khẩu",
+    "confirmPassword": "Nhập xác nhận mật khẩu",
+    "email": "Nhập email"
+  },
+  "rules": {
+    "notEmpty": "Trường này là bắt buộc",
+    "notEmpyUsername": "Tài khoản không được bỏ trống",
+    "notEmpyPassword": "Mật khẩu không được bỏ trống",
+    "notEmpyConfirmPassword": "Xác nhận mật khẩu không được bỏ trống",
+    "notEmpyEmail": "Email không được bỏ trống",
+    "notEmpyPhone": "Số điện thoại không được bỏ trống",
+    "invalidEmail": "Email không hợp lệ"
+  }
+}
