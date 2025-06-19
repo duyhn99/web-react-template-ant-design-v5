@@ -1,24 +1,34 @@
-import { Layout } from 'antd';
+import { Header } from '@/components/header/Header';
+import { useResponsive } from '@/hooks/useResponsive';
 import React, { useState } from 'react';
-import { MainContent } from './MainContent/MainContent';
+import { Outlet, useLocation } from 'react-router-dom';
+import MainContent from './MainContent/MainContent';
 import { MainHeader } from './MainHeader/MainHeader';
-import { MainSider } from './MainSider/MainSider';
+import * as S from './MainLayout.styles';
+import MainSider from './MainSider/MainSider';
 
-interface MainLayoutProps {
-  children: React.ReactNode;
-}
+const MainLayout: React.FC = () => {
+  const [isTwoColumnsLayout, setIsTwoColumnsLayout] = useState(true);
+  const [siderCollapsed, setSiderCollapsed] = useState(true);
+  const { isDesktop } = useResponsive();
+  const location = useLocation();
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const toggleSider = () => setSiderCollapsed(!siderCollapsed);
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <MainSider collapsed={collapsed} />
-      <Layout>
-        <MainHeader collapsed={collapsed} setCollapsed={setCollapsed} />
-        <MainContent>{children}</MainContent>
-      </Layout>
-    </Layout>
+    <S.LayoutMaster>
+      <MainSider isCollapsed={siderCollapsed} setCollapsed={setSiderCollapsed} />
+      <S.LayoutMain>
+        <MainHeader isTwoColumnsLayout={isTwoColumnsLayout}>
+          <Header toggleSider={toggleSider} isSiderOpened={!siderCollapsed} isTwoColumnsLayout={isTwoColumnsLayout} />
+        </MainHeader>
+        <MainContent id='main-content'>
+          <div>
+            <Outlet />
+          </div>
+        </MainContent>
+      </S.LayoutMain>
+    </S.LayoutMaster>
   );
 };
 

@@ -3,7 +3,7 @@ import PageContainer from '@/components/container/PageContainer';
 
 const HomePage = () => {
   return (
-    <PageContainer title='home'>
+    <PageContainer title='Home'>
       <BackButton wIcon>Trang chủ</BackButton>
     </PageContainer>
   );

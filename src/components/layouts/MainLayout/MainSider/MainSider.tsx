@@ -1,40 +1,33 @@
-import { SIDER } from '@/constants/constants';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
-import React from 'react';
-
-const { Sider } = Layout;
+import { useResponsive } from '@/hooks/useResponsive';
+import { useMemo } from 'react';
+import * as S from './MainSider.styles';
+import { theme } from 'antd';
+import { SiderLogo } from './SiderLogo';
 
 interface MainSiderProps {
-  collapsed: boolean;
+  isCollapsed: boolean;
+  setCollapsed: (isCollapsed: boolean) => void;
 }
 
-export const MainSider: React.FC<MainSiderProps> = ({ collapsed }) => {
+const MainSider: React.FC<MainSiderProps> = ({ isCollapsed, setCollapsed, ...props }) => {
+  const { mobileOnly, tabletOnly } = useResponsive();
+
+  const isCollapsible = useMemo(() => mobileOnly && tabletOnly, [mobileOnly, tabletOnly]);
+
+  const toggleSider = () => setCollapsed(!isCollapsed);
+
+  const {
+    token: { colorBgContainer }
+  } = theme.useToken();
+
   return (
-    <Sider trigger={null} width={SIDER.WIDTH} collapsedWidth={SIDER.COLLAPSED_WIDTH} collapsible collapsed={collapsed}>
-      <div className='demo-logo-vertical' />
-      <Menu
-        theme='dark'
-        mode='inline'
-        defaultSelectedKeys={['1']}
-        items={[
-          {
-            key: '1',
-            icon: <UserOutlined />,
-            label: 'nav 1'
-          },
-          {
-            key: '2',
-            icon: <VideoCameraOutlined />,
-            label: 'nav 2'
-          },
-          {
-            key: '3',
-            icon: <UploadOutlined />,
-            label: 'nav 3'
-          }
-        ]}
-      />
-    </Sider>
+    <>
+      <S.Sider $bgColor={colorBgContainer} collapsed={isCollapsed} collapsible={isCollapsible} width={270} {...props}>
+        <SiderLogo isSiderCollapsed={isCollapsed} toggleSider={toggleSider} />
+        <S.SiderContent>{/* <SiderMenu setCollapsed={setCollapsed} /> */}</S.SiderContent>
+      </S.Sider>
+    </>
   );
 };
+
+export default MainSider;

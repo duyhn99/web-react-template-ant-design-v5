@@ -12,41 +12,54 @@ export const COLORS = {
   borderColor: '#E2E8F0'
 };
 
+export const FONT_WEIGHT = {
+  thin: '100',
+  extraLight: '200',
+  light: '300',
+  regular: '400',
+  medium: '500',
+  semibold: '600',
+  bold: '700',
+  extraBold: '800',
+  black: '900'
+} as const;
+
 export const BORDER_RADIUS: number = 7;
+
+export const BREAKPOINTS = {
+  xs: 360,
+  sm: 568,
+  md: 768,
+  lg: 992,
+  xl: 1280,
+  xxl: 1920
+} as const;
+
+const getMedia = <T extends number>(breakpoint: T): `(min-width: ${T}px)` => `(min-width: ${breakpoint}px)`;
+
+export const MEDIA = {
+  xs: getMedia(BREAKPOINTS.xs),
+  sm: getMedia(BREAKPOINTS.sm),
+  md: getMedia(BREAKPOINTS.md),
+  lg: getMedia(BREAKPOINTS.lg),
+  xl: getMedia(BREAKPOINTS.xl),
+  xxl: getMedia(BREAKPOINTS.xxl)
+};
 
 export const SIDER = {
   COLLAPSED_WIDTH: 86,
   WIDTH: 270
 } as const;
 
-export const FONT_WEIGHT = {
-  THIN: '100',
-  EXTRALIGHT: '200',
-  LIGHT: '300',
-  REGULAR: '400',
-  MEDIUM: '500',
-  SEMIBOLD: '600',
-  BOLD: '700',
-  EXTRABOLD: '800',
-  BLACK: '900'
+export const LAYOUT = {
+  headerHeight: '4rem',
+  headerPadding: '1rem',
+  mobile: {
+    paddingVertical: '1rem',
+    paddingHorizontal: '1.5rem'
+  },
+  desktop: {
+    paddingVertical: '1rem',
+    paddingHorizontal: '1.5rem'
+  }
 } as const;
-
-export const BREAKPOINTS = {
-  XS: 360,
-  SM: 568,
-  MD: 768,
-  LG: 992,
-  XL: 1280,
-  XXL: 1920
-} as const;
-
-const getMedia = <T extends number>(breakpoint: T): `(min-width: ${T}px)` => `(min-width: ${breakpoint}px)`;
-
-export const MEDIA = {
-  XS: getMedia(BREAKPOINTS.XS),
-  SM: getMedia(BREAKPOINTS.SM),
-  MD: getMedia(BREAKPOINTS.MD),
-  LG: getMedia(BREAKPOINTS.LG),
-  XL: getMedia(BREAKPOINTS.XL),
-  XXL: getMedia(BREAKPOINTS.XXL)
-};

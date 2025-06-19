@@ -3,8 +3,8 @@ import { Notification } from '@/types/notifications.ts';
 import { Alert, Badge, Button, Card, CardProps, List, Popover } from 'antd';
 import { Bell } from 'lucide-react';
 import { useState } from 'react';
-import { HeaderActionWrapper } from '../MainHeader.styles';
 import { NotificationsItem } from './NotificationsItem';
+import { HeaderActionWrapper } from '@/components/header/Header.styles';
 
 type Props = {
   data?: Notification[];

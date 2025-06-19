@@ -1,30 +1,19 @@
-import { Button, Col, Layout, Row, theme } from 'antd';
-import { AlignJustify } from 'lucide-react';
 import React from 'react';
-import { Notifications } from './Notifications/Notifications';
+import * as S from './MainHeader.styles';
+import { WithChildrenProps } from '@/types/generalTypes';
+import { theme } from 'antd';
 
-const { Header } = Layout;
-
-interface MainHeaderProps {
-  collapsed: boolean;
-  setCollapsed: (value: boolean) => void;
+interface MainHeaderProps extends WithChildrenProps {
+  isTwoColumnsLayout: boolean;
 }
 
-export const MainHeader: React.FC<MainHeaderProps> = ({ collapsed, setCollapsed }) => {
+export const MainHeader: React.FC<MainHeaderProps> = ({ isTwoColumnsLayout, children }) => {
   const {
     token: { colorBgContainer }
   } = theme.useToken();
-
   return (
-    <Header style={{ padding: 12, background: colorBgContainer }}>
-      <Row justify='space-between' align='middle'>
-        <Col span={12}>
-          <Button type='text' icon={<AlignJustify />} onClick={() => setCollapsed(!collapsed)} />
-        </Col>
-        <Col span={8}>
-          <Notifications />
-        </Col>
-      </Row>
-    </Header>
+    <S.Header $bgColor={colorBgContainer} $isTwoColumnsLayoutHeader={isTwoColumnsLayout}>
+      {children}
+    </S.Header>
   );
 };

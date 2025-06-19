@@ -1,16 +1,15 @@
+import { LAYOUT, MEDIA } from '@/constants/constants';
 import { Layout } from 'antd';
-import React from 'react';
+import styled from 'styled-components';
 
-const { Content } = Layout;
+export default styled(Layout.Content)`
+  padding: ${LAYOUT.mobile.paddingVertical} ${LAYOUT.mobile.paddingHorizontal};
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-interface MainContentProps {
-  children: React.ReactNode;
-}
-
-export const MainContent: React.FC<MainContentProps> = ({ children }) => {
-  return (
-    <Content>
-      <div style={{ padding: 12, height: '100%' }}>{children}</div>
-    </Content>
-  );
-};
+  @media only screen and (${MEDIA.md}) {
+    padding: ${LAYOUT.desktop.paddingVertical} ${LAYOUT.desktop.paddingHorizontal};
+  }
+`;

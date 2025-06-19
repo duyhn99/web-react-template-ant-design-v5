@@ -1,19 +1,26 @@
-import { MEDIA } from '@/constants/constants';
-import styled from 'styled-components';
+import { LAYOUT, MEDIA } from '@/constants/constants';
+import { Layout } from 'antd';
+import styled, { css } from 'styled-components';
 
-export const HeaderActionWrapper = styled.div`
-  cursor: pointer;
+interface Header {
+  $isTwoColumnsLayoutHeader: boolean;
+  $bgColor: string;
+}
 
-  & > .ant-btn > span[role='img'],
-  .ant-badge {
-    font-size: 1.25rem;
-
-    @media only screen and (${MEDIA.MD}) {
-      font-size: 1.625rem;
-    }
+export const Header = styled(Layout.Header)<Header>`
+  background: ${(props) => props.$bgColor};
+  line-height: 1.5;
+  align-content: center;
+  @media only screen and (${MEDIA.md}) {
+    padding: ${LAYOUT.desktop.paddingVertical} ${LAYOUT.desktop.paddingHorizontal};
+    height: ${LAYOUT.headerHeight};
   }
 
-  & .ant-badge {
-    display: inline-block;
+  @media only screen and (${MEDIA.md}) {
+    ${(props) =>
+      props?.$isTwoColumnsLayoutHeader &&
+      css`
+        padding: 0;
+      `}
   }
 `;
