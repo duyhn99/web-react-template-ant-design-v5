@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import * as S from './MainSider.styles';
 import { theme } from 'antd';
 import { SiderLogo } from './SiderLogo';
+import { Overlay } from './Overlay';
 
 interface MainSiderProps {
   isCollapsed: boolean;
@@ -10,9 +11,9 @@ interface MainSiderProps {
 }
 
 const MainSider: React.FC<MainSiderProps> = ({ isCollapsed, setCollapsed, ...props }) => {
-  const { mobileOnly, tabletOnly } = useResponsive();
+  const { mobileOnly, isTablet } = useResponsive();
 
-  const isCollapsible = useMemo(() => mobileOnly && tabletOnly, [mobileOnly, tabletOnly]);
+  const isCollapsible = useMemo(() => mobileOnly && isTablet, [mobileOnly, isTablet]);
 
   const toggleSider = () => setCollapsed(!isCollapsed);
 
@@ -22,10 +23,18 @@ const MainSider: React.FC<MainSiderProps> = ({ isCollapsed, setCollapsed, ...pro
 
   return (
     <>
-      <S.Sider $bgColor={colorBgContainer} collapsed={isCollapsed} collapsible={isCollapsible} width={270} {...props}>
+      <S.Sider
+        $bgColor={colorBgContainer}
+        collapsedWidth={isTablet ? 80 : 0}
+        collapsed={isCollapsed}
+        collapsible={isCollapsible}
+        width={270}
+        {...props}
+      >
         <SiderLogo isSiderCollapsed={isCollapsed} toggleSider={toggleSider} />
         <S.SiderContent>{/* <SiderMenu setCollapsed={setCollapsed} /> */}</S.SiderContent>
       </S.Sider>
+      {mobileOnly && <Overlay onClick={toggleSider} $show={!isCollapsed} />}
     </>
   );
 };

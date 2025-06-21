@@ -6,27 +6,26 @@ import * as S from '../Header.styles';
 import { useResponsive } from '@/hooks/useResponsive';
 
 interface DesktopHeaderProps {
-  isTwoColumnsLayout: boolean;
   toggleSider: () => void;
 }
 
-export const DesktopHeader: React.FC<DesktopHeaderProps> = ({ isTwoColumnsLayout, toggleSider }) => {
+export const DesktopHeader: React.FC<DesktopHeaderProps> = ({ toggleSider }) => {
   const { isDesktop } = useResponsive();
   const leftSide = (
-    <S.SearchColumn xl={16} xxl={17}>
+    <Col xl={16} xxl={17}>
       <Row justify='space-between'>
         <Col xl={15} xxl={12}>
           {isDesktop && <S.MobileBurger onClick={toggleSider} />}
         </Col>
       </Row>
-    </S.SearchColumn>
+    </Col>
   );
 
   return (
     <Row justify='space-between' align='middle'>
       {leftSide}
 
-      <S.ProfileColumn xl={8} xxl={7} $isTwoColumnsLayout={isTwoColumnsLayout}>
+      <S.ProfileColumn xl={8} xxl={7}>
         <Row align='middle' justify='end' gutter={[5, 5]}>
           <Col>
             <Row gutter={[{ xxl: 5 }, { xxl: 5 }]}>

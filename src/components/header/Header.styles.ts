@@ -1,7 +1,7 @@
-import { LAYOUT, MEDIA } from '@/constants/constants';
+import { MEDIA } from '@/constants/constants';
 import { Col, Collapse } from 'antd';
 import { AlignJustify } from 'lucide-react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const HeaderActionWrapper = styled.div`
   cursor: pointer;
@@ -54,21 +54,4 @@ export const MobileBurger = styled(AlignJustify)`
   color: var(--text-main-color);
 `;
 
-export const SearchColumn = styled(Col)`
-  padding: ${LAYOUT.desktop.paddingVertical} ${LAYOUT.desktop.paddingHorizontal};
-`;
-
-interface ProfileColumn {
-  $isTwoColumnsLayout: boolean;
-}
-
-export const ProfileColumn = styled(Col)<ProfileColumn>`
-  @media only screen and (${MEDIA.md}) {
-    ${(props) =>
-      props?.$isTwoColumnsLayout &&
-      css`
-        background-color: var(--sider-background-color);
-        padding: ${LAYOUT.desktop.paddingVertical} ${LAYOUT.desktop.paddingHorizontal};
-      `}
-  }
-`;
+export const ProfileColumn = styled(Col)``;

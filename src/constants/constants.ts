@@ -55,11 +55,11 @@ export const LAYOUT = {
   headerHeight: '4rem',
   headerPadding: '1rem',
   mobile: {
-    paddingVertical: '1rem',
-    paddingHorizontal: '1.5rem'
+    paddingVertical: '0.5rem',
+    paddingHorizontal: '1rem'
   },
   desktop: {
     paddingVertical: '1rem',
-    paddingHorizontal: '1.5rem'
+    paddingHorizontal: '1.25rem'
   }
 } as const;

@@ -1,4 +1,4 @@
-import { LAYOUT, MEDIA } from '@/constants/constants';
+import { COLORS, LAYOUT, MEDIA } from '@/constants/constants';
 import { Button, Layout } from 'antd';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
@@ -10,11 +10,11 @@ interface ISider {
 export const Sider = styled(Layout.Sider)<ISider>`
   position: fixed;
   overflow: visible;
-  right: 0;
+  /* right: 0; */
   z-index: 5;
   min-height: 100vh;
   max-height: 100vh;
-
+  border-right: 1px solid ${COLORS.borderColor};
   background: ${(props) => props.$bgColor};
 
   @media only screen and (${MEDIA.md}) {
@@ -42,6 +42,9 @@ export const SiderLogoLink = styled(Link)`
   align-items: center;
   overflow: hidden;
   position: relative;
+  > img {
+    flex-shrink: 0;
+  }
 `;
 
 export const SiderLogoDiv = styled.div`
@@ -66,9 +69,6 @@ export const BrandSpan = styled.span`
 `;
 
 export const CollapseButton = styled(Button)<{ $isCollapsed: boolean }>`
-  background: var(--collapse-background-color);
-
-  border: 1px solid var(--border-color);
   transition: all 0.2s ease;
   position: absolute;
   right: 0.5rem;
@@ -76,20 +76,6 @@ export const CollapseButton = styled(Button)<{ $isCollapsed: boolean }>`
   ${(props) =>
     props.$isCollapsed &&
     css`
-      right: -1rem;
+      right: -0.75rem;
     `}
-
-  color: var(--text-secondary-color);
-
-  &:hover {
-    color: var(--text-secondary-color);
-    background: var(--primary-color);
-    border: 1px solid var(--border-color);
-  }
-
-  &:focus {
-    color: var(--text-secondary-color);
-    background: var(--primary-color);
-    border: 1px solid var(--border-color);
-  }
 `;

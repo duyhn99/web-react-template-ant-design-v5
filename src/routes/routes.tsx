@@ -37,17 +37,17 @@ type PageProps = {
 // Create an HOC to wrap your route components with ScrollToTop
 const PageWrapper = ({ children }: PageProps) => {
   return (
-    <MainLayout>
+    <>
       <ScrollToTop />
       {children}
-    </MainLayout>
+    </>
   );
 };
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <PageWrapper children={<HomePage />} />,
+    element: <PageWrapper children={<MainLayout />} />,
     // errorElement: <ErrorPage />,
     children: [
       {
