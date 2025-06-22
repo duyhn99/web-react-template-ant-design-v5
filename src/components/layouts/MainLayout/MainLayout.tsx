@@ -7,7 +7,7 @@ import * as S from './MainLayout.styles';
 import MainSider from './MainSider/MainSider';
 
 const MainLayout: React.FC = () => {
-  const [siderCollapsed, setSiderCollapsed] = useState(true);
+  const [siderCollapsed, setSiderCollapsed] = useState(false);
 
   const toggleSider = () => setSiderCollapsed(!siderCollapsed);
 

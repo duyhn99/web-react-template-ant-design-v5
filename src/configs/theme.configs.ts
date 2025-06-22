@@ -4,7 +4,7 @@ export const themeConfig = {
   token: {
     colorPrimary: COLORS['500'],
     borderRadius: BORDER_RADIUS,
-    fontFamily: 'Lato, sans-serif'
+    fontFamily: 'Inter, sans-serif'
   },
   components: {
     Breadcrumb: {

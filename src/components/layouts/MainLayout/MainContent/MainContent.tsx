@@ -12,4 +12,10 @@ export default styled(Layout.Content)`
   @media only screen and (${MEDIA.md}) {
     padding: ${LAYOUT.desktop.paddingVertical} ${LAYOUT.desktop.paddingHorizontal};
   }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
 `;

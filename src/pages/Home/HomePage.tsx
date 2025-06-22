@@ -1,14 +1,7 @@
-import PageContainer from '@/components/container/PageContainer';
-import { Button, Space } from 'antd';
+import Mordern from '@/components/dashboards/mordern/Mordern';
 
 const HomePage = () => {
-  return (
-    <PageContainer title='Home'>
-      <Space direction='vertical' style={{ width: '100%' }}>
-        <Button>Duy</Button>
-      </Space>
-    </PageContainer>
-  );
+  return <Mordern />;
 };
 
 export default HomePage;

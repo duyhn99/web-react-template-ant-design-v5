@@ -9,7 +9,14 @@ export const COLORS = {
   700: '#004f81',
   800: '#003650',
   900: '#001620',
-  borderColor: '#E2E8F0'
+  borderColor: '#E2E8F0',
+  secondray: '#79bbfc',
+  blue: '#1890FF',
+  gold: '#FAAD14',
+  purple: '#722ED1',
+  red: '#F5222D',
+  green: '#52C41A',
+  cyan: '#13C2C2'
 };
 
 export const FONT_WEIGHT = {
@@ -59,7 +66,7 @@ export const LAYOUT = {
     paddingHorizontal: '1rem'
   },
   desktop: {
-    paddingVertical: '1rem',
-    paddingHorizontal: '1.25rem'
+    paddingVertical: '1.25rem',
+    paddingHorizontal: '1.5rem'
   }
 } as const;

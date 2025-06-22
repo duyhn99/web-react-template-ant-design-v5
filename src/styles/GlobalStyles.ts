@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { GlobalClasses } from './GlobalClasses';
 
 export const GlobalStyles = createGlobalStyle`
@@ -18,11 +18,22 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .available-tucks-card .ant-list-item {
-    /*padding: 0;*/
-  }
-
   .ant-btn-icon {
     line-height: 12px;
   }
+`;
+
+export const AvatarMini = styled.div`
+  width: 24px;
+  height: 24px;
+  background-color: #e6fffb; /* success.light */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+`;
+
+export const ChartWrapper = styled.div<{ height: string }>`
+  height: ${({ height }) => height};
+  width: 100%;
 `;
