@@ -57,22 +57,12 @@ const EmployeeSalary: React.FC<EmployeeSalaryCardProps> = ({ isLoading }) => {
     <DashboardWidgetCard
       title='Employee Salary'
       subtitle='Every month'
-      dataLabel1={
-        <>
-          <DollarSign size={14} style={{ marginRight: 4 }} />
-          Salary
-        </>
-      }
+      dataLabel1={<>Salary</>}
       dataItem1='$36,358'
-      dataLabel2={
-        <>
-          <TrendingUp size={14} style={{ marginRight: 4 }} />
-          Profit
-        </>
-      }
+      dataLabel2={<>Profit</>}
       dataItem2='$5,296'
     >
-      <ChartWrapper height='268px'>
+      <ChartWrapper height='282px'>
         <Bar data={data} options={options} />
       </ChartWrapper>
     </DashboardWidgetCard>
