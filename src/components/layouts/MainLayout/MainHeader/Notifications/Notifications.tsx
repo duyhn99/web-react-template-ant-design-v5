@@ -5,6 +5,7 @@ import { Bell } from 'lucide-react';
 import { useState } from 'react';
 import { NotificationsItem } from './NotificationsItem';
 import { HeaderActionWrapper } from '@/components/header/Header.styles';
+import { IconWrapper } from '@/styles/GlobalStyles';
 
 type Props = {
   data?: Notification[];
@@ -54,10 +55,11 @@ export const Notifications = ({ data, loading, error, ...others }: Props) => {
     >
       <HeaderActionWrapper>
         <Button
+          shape='circle'
           type={isOpen ? 'default' : 'text'}
           icon={
             <Badge dot>
-              <Bell />
+              <Bell size={21} />
             </Badge>
           }
         />

@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { Notifications } from '@/components/layouts/MainLayout/MainHeader/Notifications/Notifications';
-import { Col, Row } from 'antd';
+import { Col, Flex, Row } from 'antd';
 import * as S from '../Header.styles';
 import { useResponsive } from '@/hooks/useResponsive';
+import Profile from '../profile/Profile';
 
 interface DesktopHeaderProps {
   toggleSider: () => void;
@@ -22,26 +23,12 @@ export const DesktopHeader: React.FC<DesktopHeaderProps> = ({ toggleSider }) => 
   );
 
   return (
-    <Row justify='space-between' align='middle'>
+    <Row justify='space-between' align='middle' className='h-full'>
       {leftSide}
-
-      <S.ProfileColumn xl={8} xxl={7}>
-        <Row align='middle' justify='end' gutter={[5, 5]}>
-          <Col>
-            <Row gutter={[{ xxl: 5 }, { xxl: 5 }]}>
-              <Col></Col>
-
-              <Col>
-                <Notifications />
-              </Col>
-
-              <Col></Col>
-            </Row>
-          </Col>
-
-          <Col></Col>
-        </Row>
-      </S.ProfileColumn>
+      <Flex gap='small' align='center' className='h-full'>
+        <Notifications />
+        <Profile />
+      </Flex>
     </Row>
   );
 };

@@ -35,5 +35,8 @@
     "notEmpyEmail": "Email không được bỏ trống",
     "notEmpyPhone": "Số điện thoại không được bỏ trống",
     "invalidEmail": "Email không hợp lệ"
+  },
+  "user": {
+    "userProfile": "Trang cá nhân"
   }
 }

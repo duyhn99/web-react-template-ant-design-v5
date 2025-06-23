@@ -37,3 +37,12 @@ export const ChartWrapper = styled.div<{ height: string }>`
   height: ${({ height }) => height};
   width: 100%;
 `;
+
+export const IconWrapper = styled.div`
+  cursor: pointer;
+  padding: 12px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 50%;
+  }
+`;
