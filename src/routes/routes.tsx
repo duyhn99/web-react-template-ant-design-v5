@@ -8,12 +8,14 @@ const HomeLazy = lazy(() => import('@/pages/Home/HomePage'));
 const LoginLazy = lazy(() => import('@/components/auth/auth1/login/LoginForm'));
 const RegisterLazy = lazy(() => import('@/components/auth/auth1/register/RegisterForm'));
 const ForgotPasswordLazy = lazy(() => import('@/components/auth/auth1/forgot-password/ForgotPassword'));
+const UserProfileLazy = lazy(() => import('@/pages/UserProfile/UserProfile'));
 
 // Wrap your route components with the HOC
 const HomePage = withLoading(HomeLazy);
 const LoginPage = withLoading(LoginLazy);
 const RegisterPage = withLoading(RegisterLazy);
 const ForgotPasswordPage = withLoading(ForgotPasswordLazy);
+const UserProfilePage = withLoading(UserProfileLazy);
 
 // Custom scroll restoration function
 export const ScrollToTop: React.FC = () => {
@@ -53,6 +55,27 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />
+      },
+      {
+        path: 'user-profile',
+        children: [
+          {
+            path: 'profile',
+            element: <UserProfilePage />
+          },
+          {
+            path: 'followers',
+            element: <div>Followers</div>
+          },
+          {
+            path: 'friends',
+            element: <div>Friends</div>
+          },
+          {
+            path: 'gallery',
+            element: <div>Gallery</div>
+          }
+        ]
       }
     ]
   },

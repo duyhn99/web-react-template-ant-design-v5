@@ -47,8 +47,8 @@ export const BurgerCol = styled(Col)`
 `;
 
 export const MobileBurger = styled(AlignJustify)`
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 21px;
+  height: 21px;
   margin-right: -0.5rem;
   cursor: pointer;
   color: var(--text-main-color);

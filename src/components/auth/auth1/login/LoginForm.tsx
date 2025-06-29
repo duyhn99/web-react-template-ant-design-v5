@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthForm from '../authForms/AuthForm';
 import * as S from '../authForms/AuthForm.styles';
+import { persistUser } from '@/services/localStorage.service';
+import { userData } from '@/data/user';
 
 const { Title, Text } = Typography;
 
@@ -18,9 +20,10 @@ export default function LoginForm() {
       setIsLoading(true);
       console.log(values);
       await setTimeout(() => {
+        persistUser(userData);
         navigate(ROUTE.HOME);
         setIsLoading(false);
-      }, 5000);
+      }, 1000);
     } catch (error) {
       console.log(error);
     } finally {

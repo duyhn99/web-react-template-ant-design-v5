@@ -52,11 +52,9 @@ const Social: React.FC = () => {
           </Col>
           <Col>
             <Link to='/'>
-              <a>
-                <IconBox>
-                  <MessageCircle size={20} color='#1890FF' />
-                </IconBox>
-              </a>
+              <IconBox>
+                <MessageCircle size={20} color='#1890FF' />
+              </IconBox>
             </Link>
           </Col>
         </Row>

@@ -1,11 +1,10 @@
 import { Loading } from '@/components/common/Loading/Loading';
+import { HeaderActionWrapper } from '@/components/header/Header.styles';
 import { Notification } from '@/types/notifications.ts';
 import { Alert, Badge, Button, Card, CardProps, List, Popover } from 'antd';
 import { Bell } from 'lucide-react';
 import { useState } from 'react';
 import { NotificationsItem } from './NotificationsItem';
-import { HeaderActionWrapper } from '@/components/header/Header.styles';
-import { IconWrapper } from '@/styles/GlobalStyles';
 
 type Props = {
   data?: Notification[];

@@ -46,7 +46,7 @@ const ProfileOverlay = () => {
     <ProfileOverlayWrapper>
       <Row gutter={[0, 24]}>
         <Col span={24}>
-          <Title level={4}>{t('user.userProfile')}</Title>
+          <Title level={4}>{t('user.profile')}</Title>
         </Col>
         <Col span={24}>
           <Flex gap='middle' align='center'>

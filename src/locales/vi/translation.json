@@ -25,7 +25,14 @@
     "username": "Nhập tài khoản",
     "password": "Nhập mật khẩu",
     "confirmPassword": "Nhập xác nhận mật khẩu",
-    "email": "Nhập email"
+    "email": "Nhập email",
+    "phone": "Nhập số điện thoại",
+    "fullName": "Nhập họ và tên",
+    "birthday": "Chọn ngày sinh",
+    "gender": "Chọn giới tính",
+    "address": "Nhập địa chỉ",
+    "district": "Chọn Tỉnh/Thành",
+    "area": "Chọn Xã/Phường"
   },
   "rules": {
     "notEmpty": "Trường này là bắt buộc",
@@ -34,9 +41,31 @@
     "notEmpyConfirmPassword": "Xác nhận mật khẩu không được bỏ trống",
     "notEmpyEmail": "Email không được bỏ trống",
     "notEmpyPhone": "Số điện thoại không được bỏ trống",
-    "invalidEmail": "Email không hợp lệ"
+    "invalidEmail": "Email không hợp lệ",
+    "notEmpyFullName": "Họ và tên không được bỏ trống",
+    "notEmptyPhone": "Số điện thoại không được bỏ trống",
+    "invalidPhone": "Số điện thoại không hợp lệ",
+    "notEmpyBirthday": "Ngày sinh không được bỏ trống",
+    "notEmptyAddress": "Địa chỉ không được bỏ trống",
+    "notEmptyDistrict": "Tỉnh/Thành không được bỏ trống",
+    "notEmptyArea": "Xã/Phường không được bỏ trống",
+    "notEmptyGender": "Giới tính không được bỏ trống"
   },
   "user": {
-    "userProfile": "Trang cá nhân"
+    "profile": "Trang cá nhân",
+    "fullName": "Họ và tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "birthday": "Ngày sinh",
+    "gender": "Giới tính",
+    "avatar": "Avatar",
+    "address": "Địa chỉ",
+    "district": "Tỉnh/Thành",
+    "area": "Xã/Phường"
+  },
+  "button": {
+    "save": "Lưu",
+    "cancel": "Huỷ",
+    "update": "Cập nhật"
   }
 }

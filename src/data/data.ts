@@ -67,19 +67,19 @@ interface ProfileType {
 }
 const profile: ProfileType[] = [
   {
-    href: '/apps/user-profile/profile',
+    href: '/user-profile/profile',
     title: 'My Profile',
     subtitle: 'Account Settings',
     icon: iconAccount
   },
   {
-    href: '/apps/email',
+    href: '/email',
     title: 'My Inbox',
     subtitle: 'Messages & Emails',
     icon: iconInbox
   },
   {
-    href: '/apps/notes',
+    href: '/notes',
     title: 'My Tasks',
     subtitle: 'To-do and Daily Tasks',
     icon: iconTasks

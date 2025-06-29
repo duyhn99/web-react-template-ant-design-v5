@@ -26,10 +26,10 @@ interface RevenueUpdatesTwoCardProps {
   isLoading: boolean;
 }
 
-const IconBox = styled.div<{ bg?: string }>`
+const IconBox = styled.div<{ $bg?: string }>`
   width: 40px;
   height: 40px;
-  background-color: ${({ bg }) => bg || '#e6f7ff'};
+  background-color: ${({ $bg }) => $bg || '#e6f7ff'};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,7 +123,7 @@ const RevenueUpdates: React.FC<RevenueUpdatesTwoCardProps> = ({ isLoading }) => 
         <Col xs={24} sm={8}>
           <Row align='middle' gutter={16} style={{ marginTop: 24 }}>
             <Col>
-              <IconBox bg='#e6f7ff'>
+              <IconBox $bg='#e6f7ff'>
                 <Grip size={24} color={primary} />
               </IconBox>
             </Col>

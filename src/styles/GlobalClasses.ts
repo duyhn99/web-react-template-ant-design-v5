@@ -23,20 +23,4 @@ export const GlobalClasses = css`
   .ant-typography {
     margin-bottom: 0 !important;
   }
-
-  .h-full {
-    height: 100%;
-  }
-
-  .h-screen {
-    height: 100vh;
-  }
-
-  .w-full {
-    width: 100%;
-  }
-
-  .text-center {
-    text-align: center;
-  }
 `;

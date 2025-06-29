@@ -1,4 +1,3 @@
-'use client';
 import PageContainer from '@/components/container/PageContainer';
 import { Col, Row } from 'antd';
 import { useEffect, useState } from 'react';

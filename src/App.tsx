@@ -1,9 +1,9 @@
 import { ConfigProvider, theme as antdTheme } from 'antd';
 import { RouterProvider } from 'react-router-dom';
+import { webName } from './configs/main.configs.ts';
 import { themeConfig } from './configs/theme.configs.ts';
 import { useAppSelector } from './hooks/reduxHooks';
 import routes from './routes/routes.tsx';
-import { webName } from './configs/main.configs.ts';
 
 function App() {
   const theme = useAppSelector((state) => state.theme.theme);
